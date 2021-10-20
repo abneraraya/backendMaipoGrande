@@ -18,7 +18,7 @@ from django.urls import path
 from django.urls.conf import include
 from maipo_grande.test_de_impresion import printaproductor
 from maipo_grande.dao.productordao import buscarProductor
-from maipo_grande.view import AdministradorViewSet, ClienteExtranjeroViewSet, ClienteNacionalViewSet, ConcretacionventaViewSet, ProductorViewSet, ContratoventaextranjeroViewSet, PedidointernacionalViewSet,ContratoproductorViewSet
+from maipo_grande.view import AdministradorViewSet, ClienteExtranjeroViewSet, ClienteNacionalViewSet, ConcretacionventaViewSet, ProductorViewSet, ContratoventaextranjeroViewSet, PedidointernacionalViewSet,ContratoproductorViewSet,PedidonacionalViewSet,ProductosViewSet,TransportistaViewSet
 from rest_framework import routers
 
 
@@ -31,6 +31,9 @@ router.register('concretacionventa',ConcretacionventaViewSet)
 router.register('contratoventaextranjero',ContratoventaextranjeroViewSet)
 router.register('pedidointernacional',PedidointernacionalViewSet)
 router.register('contratoproductor',ContratoproductorViewSet)
+router.register('pedidonacional',PedidonacionalViewSet)
+router.register('productos',ProductosViewSet)
+router.register('transportista',TransportistaViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -290,6 +290,7 @@ class Pedidointernacional(models.Model):
 
     }
 
+##listo
 class Pedidonacional(models.Model):
     idpedidonacional = models.AutoField(primary_key=True)
     idclientenacional = models.OneToOneField(Clientenacional, on_delete=models.CASCADE, db_column='idclientenacional')
@@ -362,7 +363,6 @@ class Pedidonacional(models.Model):
             'producto10':self.producto10,
             'cantidad10':self.cantidad10,
             'embalaje10':self.embalaje10,
-
     }
 
 
@@ -639,6 +639,7 @@ class Postulaciontransnacional(models.Model):
                'ganadora':self.ganadora
         }
 
+##listo
 class Productor(models.Model):
     idproductor = models.AutoField(primary_key=True)
     rut = models.CharField(max_length=50)
@@ -665,7 +666,7 @@ class Productor(models.Model):
              'userpass': self.userpass,
             }
 
-
+##listo
 class Productos(models.Model):
     idproductos = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=200)
@@ -791,7 +792,7 @@ class Subastatransportenacional(models.Model):
             'direccionentrega':self.direccionentrega,
             'idadministrador':self.idadministrador,
      }
-
+## listo
 class Transportista(models.Model):
     idtransportista = models.AutoField(primary_key=True)
     rut = models.CharField(max_length=50)

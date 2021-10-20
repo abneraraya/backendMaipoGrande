@@ -21,3 +21,37 @@ python.exe .\manage.py inspectdb
 -Creas los Serializadores (serializer.py)
 -Creas las view (view.py)
 -Creas un router con las url(url.py)
+
+## url de api ya creadas 
+
+En la siguiente lista aparecen las url de las api creadas hasta el momento, la lista desplegada a continuacion  se diviran en dos grupos.
+
+El primer grupo de ellos son entidades base es decir que no necesitan que existan creadas otras entidades con anticipacion para poder crear nuevos registros en si mismas 
+
+--------------Entidades base---------------------------------
+
+.- http://127.0.0.1:8000/api/productor/ Esta url pertenece a la entidad productores, en esta se pueden
+hacer las acciones basicas de un crud que son la creacion, la lectura , la actualizacion y el eliminado de los mismos, es decir que soporta metodos post,get,put y delete, todo mediante rotocolos http.
+   
+.- http://127.0.0.1:8000/api/administrador Esta url pertenece a la entidad administrador, en esta se pueden
+hacer las acciones basicas de un crud que son la creacion, la lectura , la actualizacion y el eliminado de los mismos, es decir que soporta metodos post,get,put y delete, todo mediante rotocolos http.
+   
+.- http://127.0.0.1:8000/api/clienteextranjero Esta url pertenece a la entidad cliente extranjero, en esta se pueden hacer las acciones basicas de un crud que son la creacion, la lectura , la actualizacion y el eliminado de los mismos, es decir que soporta metodos post,get,put y delete, todo mediante rotocolos http.
+   
+.- http://127.0.0.1:8000/api/clientenacional Esta url pertenece a la entidad cliente nacional, en esta se pueden hacer las acciones basicas de un crud que son la creacion, la lectura , la actualizacion y el eliminado de los mismos, es decir que soporta metodos post,get,put y delete, todo mediante rotocolos http
+
+.-http://127.0.0.1:8000/api/transportista Esta url pertenece a la entidad transportista, en esta se pueden hacer las acciones basicas de un crud que son la creacion, la lectura , la actualizacion y el eliminado de los mismos, es decir que soporta metodos post,get,put y delete, todo mediante rotocolos http.
+
+----------------------- Fin de entidades base ------------------------------
+
+----------------------- Entidades secundarias ------------------------------
+las siguientes url descrita a continuacion  pertenecen a entidades secundarias, es decir para poder insertar datos (es decir hacer post ) es necesario que existan entidades previamente llenadas  como por ejemplo en la entidad pedido nacional 
+
+Pedido nacional necesita que sea hecho por un cliente nacional  es decir que  primero deben haber creado un cliente nacional para que este pueda hacer el pedido perse
+   
+.- http://127.0.0.1:8000/api/concretacionventa
+.- http://127.0.0.1:8000/api/contratoventaextranjero
+.- http://127.0.0.1:8000/api/pedidointernacional
+.- http://127.0.0.1:8000/api/contratoproductor
+.- http://127.0.0.1:8000/api/pedidonacional
+.- http://127.0.0.1:8000/api/productos
