@@ -16,9 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
-from maipo_grande.test_de_impresion import printaproductor
-from maipo_grande.dao.productordao import buscarProductor
-from maipo_grande.view import AdministradorViewSet, ClienteExtranjeroViewSet, ClienteNacionalViewSet, ConcretacionventaViewSet, ProductorViewSet, ContratoventaextranjeroViewSet, PedidointernacionalViewSet,ContratoproductorViewSet,PedidonacionalViewSet,ProductosViewSet,TransportistaViewSet
+from maipo_grande.view import AdministradorViewSet, ClienteExtranjeroViewSet, ClienteNacionalViewSet, ConcretacionventaViewSet, ProductorViewSet, ContratoventaextranjeroViewSet, PedidointernacionalViewSet,ContratoproductorViewSet,PedidonacionalViewSet,ProductosViewSet,TransportistaViewSet,VehiculoViewSet,SubastatransportenacionalViewSet,SubastapedidonacionalViewSet,SubastatransinternacionaleViewSet
 from rest_framework import routers
 
 
@@ -34,6 +32,10 @@ router.register('contratoproductor',ContratoproductorViewSet)
 router.register('pedidonacional',PedidonacionalViewSet)
 router.register('productos',ProductosViewSet)
 router.register('transportista',TransportistaViewSet)
+router.register('vehiculo',VehiculoViewSet)
+router.register('subastatransportenacional',SubastatransportenacionalViewSet)
+router.register('subastapedidonacional',SubastapedidonacionalViewSet)
+router.register('subastatransporteinternacional',SubastatransinternacionaleViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

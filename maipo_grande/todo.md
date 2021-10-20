@@ -6,3 +6,4 @@
 
 ## eliminar registro unico que  de pedido nacional ya que  un cliente nacional deberia poder hacer muchos pedidos
 
+## arrelgar que se unico la subasta de transporte internacional

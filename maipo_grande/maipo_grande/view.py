@@ -1,5 +1,6 @@
+from django.db.models import query
 from rest_framework import serializers, viewsets
-from maipo_grande.modelo.models import Administrador, Clienteextranjero, Clientenacional, Concretacionventa, Contratoventaextranjero, Pedidointernacional, Pedidonacional, Productor,Contratoproductor,Productos,Transportista
+from maipo_grande.modelo.models import Administrador, Clienteextranjero, Clientenacional, Concretacionventa, Contratoventaextranjero, Pedidointernacional, Pedidonacional, Productor,Contratoproductor,Productos,Transportista,Vehiculo,Subastatransportenacional,Subastapedidonacional,Subastatransinternacional
 from .modelo import serializer
 
 
@@ -45,4 +46,20 @@ class ProductosViewSet(viewsets.ModelViewSet):
 
 class TransportistaViewSet(viewsets.ModelViewSet):
     queryset=Transportista.objects.all()
-    serializer_class=serializer.transportistaSerializer
+    serializer_class=serializer.TransportistaSerializer
+
+class VehiculoViewSet(viewsets.ModelViewSet):
+    queryset=Vehiculo.objects.all()
+    serializer_class=serializer.VehiculoSerializer 
+
+class SubastatransportenacionalViewSet(viewsets.ModelViewSet):
+    queryset=Subastatransportenacional.objects.all()
+    serializer_class=serializer.SubastatransportenacionalSerializer
+
+class SubastapedidonacionalViewSet(viewsets.ModelViewSet):
+    queryset=Subastapedidonacional.objects.all()
+    serializer_class=serializer.SubastapedidonacionalSerializer
+
+class SubastatransinternacionaleViewSet(viewsets.ModelViewSet):
+    queryset=Subastatransinternacional.objects.all()
+    serializer_class=serializer.SubastatransinternacionalSerializer

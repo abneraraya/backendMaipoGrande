@@ -765,14 +765,13 @@ class Subastatransinternacional(models.Model):
             'idadministrador':self.idadministrador,
      }
 
-
+##listo 
 class Subastatransportenacional(models.Model):
     idsubastatransportenacional = models.AutoField(primary_key=True)
     fechainicio = models.DateField()
     fechatermino = models.DateField()
     fecharealizacion = models.DateField()
     direccionorigen = models.CharField(max_length=100)
-    idcontratoventaextranjero = models.IntegerField()
     direccionentrega = models.CharField(max_length=100)
     idadministrador = models.ForeignKey(Administrador, on_delete=models.CASCADE, db_column='idadministrador')
     idpedidonacional = models.OneToOneField(Pedidonacional, on_delete=models.CASCADE, db_column='idpedidonacional')
@@ -788,11 +787,12 @@ class Subastatransportenacional(models.Model):
             'fechatermino':self.fechatermino,
             'fecharealizacion':self.fecharealizacion,
             'direccionorigen':self.direccionorigen,
-            'idcontratoventaextranjero':self.idcontratoventaextranjero,
             'direccionentrega':self.direccionentrega,
             'idadministrador':self.idadministrador,
+            'idpedidonacional':self.idpedidonacional
      }
-## listo
+
+##Listo
 class Transportista(models.Model):
     idtransportista = models.AutoField(primary_key=True)
     rut = models.CharField(max_length=50)
@@ -815,6 +815,7 @@ class Transportista(models.Model):
                 'userpass':self.userpass
         }
 
+##Listo
 class Vehiculo(models.Model):
     idvehiculo = models.AutoField(primary_key=True)
     tipovehiculo = models.CharField(max_length=100)

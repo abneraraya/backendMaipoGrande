@@ -1,9 +1,9 @@
 from django.db import models
 from django.db.models import fields
 from rest_framework import serializers
-from .models import Administrador, Clientenacional, Contratoproductor, Contratoventaextranjero, Pedidointernacional, Pedidonacional, Productor, Clienteextranjero,Concretacionventa, Productos,Transportista
+from .models import Administrador, Clientenacional, Contratoproductor, Contratoventaextranjero, Pedidointernacional, Pedidonacional, Productor, Clienteextranjero,Concretacionventa, Productos,Transportista,Vehiculo,Subastatransportenacional,Subastapedidonacional,Subastatransinternacional
 
-## serializador de productor
+## Serializador de productor
 class ProductorSerializer(serializers.ModelSerializer):
     class Meta:
         model=Productor
@@ -17,7 +17,7 @@ class ProductorSerializer(serializers.ModelSerializer):
                  'userpass'
                 ]
 
-## serializador de adminitrador
+## Serializador de adminitrador
 class AdministradorSerializer(serializers.ModelSerializer):
     class Meta:
         model=Administrador
@@ -29,7 +29,7 @@ class AdministradorSerializer(serializers.ModelSerializer):
                  'userpass'
                 ]
 
-##serializador de cliente extranjero
+## Serializador de cliente extranjero
 class ClienteExtranjeroSerializer (serializers.ModelSerializer):
     class Meta:
         model=Clienteextranjero
@@ -40,7 +40,7 @@ class ClienteExtranjeroSerializer (serializers.ModelSerializer):
                 'userpass'
                ]
 
-##serializador de cliente nacional
+## Serializador de cliente nacional
 class ClienteNacionalSerializer (serializers.ModelSerializer):
     class Meta:
         model=Clientenacional
@@ -51,7 +51,7 @@ class ClienteNacionalSerializer (serializers.ModelSerializer):
                 'userpass'
                ]
 
-##serializador de concretacionventa
+## Serializador de concretacionventa
 class ConcretacionventaSerializer (serializers.ModelSerializer):
     class Meta:
         model =Concretacionventa
@@ -68,7 +68,7 @@ class ConcretacionventaSerializer (serializers.ModelSerializer):
                  'idcontratoventaextranjero'
                 ]
 
-##serializador de contrato venta extranjero
+## Serializador de contrato venta extranjero
 class ContratoventaextranjeroSerializer(serializers.ModelSerializer):
     class Meta:
         model=Contratoventaextranjero
@@ -82,7 +82,7 @@ class ContratoventaextranjeroSerializer(serializers.ModelSerializer):
                 'idpedidointernacional',
                 'idclienteextranjero']
 
-## serializador  de contrato productor
+## Serializador  de contrato productor
 class ContratoproductorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contratoproductor
@@ -95,7 +95,7 @@ class ContratoproductorSerializer(serializers.ModelSerializer):
                 'idproductor'
                ]
 
-## serializador de pedido internacionacional
+## Serializador de pedido internacionacional
 class PedidoInternacionalSerializer(serializers.ModelSerializer):
     class Meta:
         model=Pedidointernacional
@@ -133,7 +133,7 @@ class PedidoInternacionalSerializer(serializers.ModelSerializer):
                 'embalaje10',
                ]
 
-## serializador de pedido nacional
+## Serializador de pedido nacional
 class PedidonacionalSerializer(serializers.ModelSerializer):
     class Meta:
         model =Pedidonacional
@@ -171,7 +171,7 @@ class PedidonacionalSerializer(serializers.ModelSerializer):
                 'embalaje10',
                ]
 
-
+## Serializador de productos
 class ProductosSerializer(serializers.ModelSerializer):
     class Meta:
         model = Productos
@@ -185,7 +185,8 @@ class ProductosSerializer(serializers.ModelSerializer):
                 'idproductor'
                ]
 
-class transportistaSerializer(serializers.ModelSerializer):
+## Serializador de transportista
+class TransportistaSerializer(serializers.ModelSerializer):
     class Meta:
         model= Transportista
         fields=['idtransportista',
@@ -194,4 +195,56 @@ class transportistaSerializer(serializers.ModelSerializer):
                 'direccion',
                 'username',
                 'userpass'
+               ]
+
+## Serializador de vehiculo
+class VehiculoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Vehiculo
+        fields=['idvehiculo',
+                'tipovehiculo',
+                'patente',
+                'cargamaxima',
+                'tipodecarga',
+                'cadenadefrio',
+                'idtransportista'
+               ] 
+
+## Serializador de subasta transporte nacional           
+class SubastatransportenacionalSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Subastatransportenacional
+        fields=['idsubastatransportenacional',
+                'fechainicio',
+                'fechatermino',
+                'fecharealizacion',
+                'direccionorigen',
+                'direccionentrega',
+                'idadministrador',
+                'idpedidonacional'
+               ]
+
+## Serializador subasta pedido nacional
+class SubastapedidonacionalSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Subastapedidonacional
+        fields=['idsubastapedidonacional',
+                'fechainicio',
+                'fechatermino',
+                'fechaentregadeproductos',
+                'idadministrador',
+                'idpedidonacional'
+               ]
+
+class SubastatransinternacionalSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Subastatransinternacional
+        fields=['idsubastatransinternacional',
+                'fechainicio',
+                'fechatermino',
+                'fecharealizacion',
+                'direccionorigen',
+                'idcontratoventaextranjero',
+                'direccionentrega',
+                'idadministrador',
                ]
