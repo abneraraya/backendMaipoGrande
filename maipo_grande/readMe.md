@@ -78,3 +78,17 @@ Para poder crear algun registro dentro de esta entidad Primeramente debe existir
 "subastapedidonacional": "http://127.0.0.1:8000/api/subastapedidonacional/",
 
 "subastatransporteinternacional": "http://127.0.0.1:8000/api/subastatransporteinternacional/"
+
+"postulacioninternacional": "http://127.0.0.1:8000/api/postulacioninternacional/",
+
+"postulacionnacional": "http://127.0.0.1:8000/api/postulacionnacional/"
+
+"subastapedidointernacional": "http://127.0.0.1:8000/api/subastapedidointernacional/",
+
+"postulaciontransportenacional": "http://127.0.0.1:8000/api/postulaciontransportenacional/",
+
+"postulaciontransporteinternacional": "http://127.0.0.1:8000/api/postulaciontransporteinternacional/",
+
+"informedeventaglobal": "http://127.0.0.1:8000/api/informedeventaglobal/",
+
+"informeventapersonal": "http://127.0.0.1:8000/api/informeventapersonal/"

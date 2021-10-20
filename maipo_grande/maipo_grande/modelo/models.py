@@ -365,7 +365,7 @@ class Pedidonacional(models.Model):
             'embalaje10':self.embalaje10,
     }
 
-
+##listo
 class Postulacioninternacional(models.Model):
     idpostulacioninternacional = models.AutoField(primary_key=True)
     idproductor = models.ForeignKey('Productor',on_delete=models.CASCADE, db_column='idproductor')
@@ -454,6 +454,7 @@ class Postulacioninternacional(models.Model):
             'ganador':self.ganadora  
      }
 
+##listo
 class Postulacionnacional(models.Model):
     idpostulacionnacional = models.AutoField(primary_key=True)
     idproductor = models.ForeignKey('Productor', on_delete=models.CASCADE, db_column='idproductor')
@@ -542,7 +543,7 @@ class Postulacionnacional(models.Model):
             'ganador':self.ganadora  
       } 
 
-
+##listo
 class Postulaciontransinternacional(models.Model):
     idpostulacion = models.AutoField(primary_key=True)
     idtransportista = models.ForeignKey('Transportista', on_delete=models.CASCADE, db_column='idtransportista')
@@ -590,7 +591,8 @@ class Postulaciontransinternacional(models.Model):
                'cadenadefrio5':self.cadenadefrio5,
                'ganadora':self.ganadora
         }
-   
+
+##listo   
 class Postulaciontransnacional(models.Model):
     idpostulacionnacional = models.AutoField(primary_key=True)
     idtransportista = models.ForeignKey('Transportista', on_delete=models.CASCADE, db_column='idtransportista')
@@ -693,6 +695,7 @@ class Productos(models.Model):
          'idproductor':self.idproductor
      }
 
+##listo
 class Subastapedidointernacional(models.Model):
     idsubastapedidointernacional = models.AutoField(primary_key=True)
     fechainicio = models.DateField()
@@ -715,7 +718,7 @@ class Subastapedidointernacional(models.Model):
             'idpedidointernacional':self.idpedidointernacional
      }
 
-
+##listo
 class Subastapedidonacional(models.Model):
     idsubastapedidonacional = models.AutoField(primary_key=True)
     fechainicio = models.DateField()
@@ -738,7 +741,7 @@ class Subastapedidonacional(models.Model):
             'idpedidonacional':self.idpedidonacional
      }
 
-
+##listo
 class Subastatransinternacional(models.Model):
     idsubastatransinternacional = models.AutoField(primary_key=True)
     fechainicio = models.DateField()

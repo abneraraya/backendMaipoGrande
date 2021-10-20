@@ -16,8 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
-from maipo_grande.view import AdministradorViewSet, ClienteExtranjeroViewSet, ClienteNacionalViewSet, ConcretacionventaViewSet, ProductorViewSet, ContratoventaextranjeroViewSet, PedidointernacionalViewSet,ContratoproductorViewSet,PedidonacionalViewSet,ProductosViewSet,TransportistaViewSet,VehiculoViewSet,SubastatransportenacionalViewSet,SubastapedidonacionalViewSet,SubastatransinternacionaleViewSet
-from rest_framework import routers
+from maipo_grande.view import AdministradorViewSet, ClienteExtranjeroViewSet, ClienteNacionalViewSet, ConcretacionventaViewSet, ProductorViewSet, ContratoventaextranjeroViewSet, PedidointernacionalViewSet,ContratoproductorViewSet,PedidonacionalViewSet,ProductosViewSet,TransportistaViewSet,VehiculoViewSet,SubastatransportenacionalViewSet,SubastapedidonacionalViewSet,SubastatransinternacionaleViewSet,PostulacioninternacionalViewSet,PostulacionnacionalViewSet,SubastapedidointernacionalViewSet,PostulaciontransnacionalViewSet,PostulaciontraninternacionalViewSet,InformeventaglobalViewSet,InformeventapersonalViewSet
+from rest_framework import routers, views
 
 
 router=routers.DefaultRouter()
@@ -36,6 +36,13 @@ router.register('vehiculo',VehiculoViewSet)
 router.register('subastatransportenacional',SubastatransportenacionalViewSet)
 router.register('subastapedidonacional',SubastapedidonacionalViewSet)
 router.register('subastatransporteinternacional',SubastatransinternacionaleViewSet)
+router.register('postulacioninternacional',PostulacioninternacionalViewSet)
+router.register('postulacionnacional',PostulacionnacionalViewSet)
+router.register('subastapedidointernacional',SubastapedidointernacionalViewSet)
+router.register('postulaciontransportenacional',PostulaciontransnacionalViewSet)
+router.register('postulaciontransporteinternacional',PostulaciontraninternacionalViewSet)
+router.register('informedeventaglobal',InformeventaglobalViewSet)
+router.register('informeventapersonal',InformeventapersonalViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

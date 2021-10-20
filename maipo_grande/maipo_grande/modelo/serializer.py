@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models import fields
 from rest_framework import serializers
-from .models import Administrador, Clientenacional, Contratoproductor, Contratoventaextranjero, Pedidointernacional, Pedidonacional, Productor, Clienteextranjero,Concretacionventa, Productos,Transportista,Vehiculo,Subastatransportenacional,Subastapedidonacional,Subastatransinternacional
+from .models import Administrador, Clientenacional, Contratoproductor, Contratoventaextranjero, Pedidointernacional, Pedidonacional, Productor, Clienteextranjero,Concretacionventa, Productos,Transportista,Vehiculo,Subastatransportenacional,Subastapedidonacional,Subastatransinternacional,Postulacioninternacional,Postulacionnacional,Subastapedidointernacional,Postulaciontransnacional,Postulaciontransinternacional,Informeventaglobal, Informeventapersonal
 
 ## Serializador de productor
 class ProductorSerializer(serializers.ModelSerializer):
@@ -133,6 +133,46 @@ class PedidoInternacionalSerializer(serializers.ModelSerializer):
                 'embalaje10',
                ]
 
+## Serializador de Postulacion Internacional
+class PostulacioninternacionalSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Postulacioninternacional
+        fields=['idpostulacioninternacional',
+                'idproductor',
+                'idsubastapedidointernacional',
+                'fruta1',
+                'cantidad1',
+                'precio1',
+                'fruta2',
+                'cantidad2',
+                'precio2', 
+                'fruta3',
+                'cantidad3',
+                'precio3', 
+                'fruta4',
+                'cantidad4',
+                'precio4', 
+                'fruta5',
+                'cantidad5',
+                'precio5', 
+                'fruta6',
+                'cantidad6',
+                'precio6', 
+                'fruta7',
+                'cantidad7',
+                'precio7', 
+                'fruta8',
+                'cantidad8',
+                'precio8', 
+                'fruta9',
+                'cantidad9',
+                'precio9', 
+                'fruta10',
+                'cantidad10',
+                'precio10',
+                'ganadora'  
+               ]
+
 ## Serializador de pedido nacional
 class PedidonacionalSerializer(serializers.ModelSerializer):
     class Meta:
@@ -236,6 +276,7 @@ class SubastapedidonacionalSerializer(serializers.ModelSerializer):
                 'idpedidonacional'
                ]
 
+## Serializador Subasta transporte internacional
 class SubastatransinternacionalSerializer(serializers.ModelSerializer):
     class Meta:
         model=Subastatransinternacional
@@ -247,4 +288,131 @@ class SubastatransinternacionalSerializer(serializers.ModelSerializer):
                 'idcontratoventaextranjero',
                 'direccionentrega',
                 'idadministrador',
+               ]
+
+## Serializador postulacion nacional
+class PostulacionnacionalSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Postulacionnacional
+        fields=['idpostulacionnacional',
+                'idproductor',
+                'idsubastapedidonacional',
+                'fruta1',
+                'cantidad1',
+                'precio1',
+                'fruta2',
+                'cantidad2',
+                'precio2', 
+                'fruta3',
+                'cantidad3',
+                'precio3', 
+                'fruta4',
+                'cantidad4',
+                'precio4', 
+                'fruta5',
+                'cantidad5',
+                'precio5', 
+                'fruta6',
+                'cantidad6',
+                'precio6', 
+                'fruta7',
+                'cantidad7',
+                'precio7', 
+                'fruta8',
+                'cantidad8',
+                'precio8', 
+                'fruta9',
+                'cantidad9',
+                'precio9', 
+                'fruta10',
+                'cantidad10',
+                'precio10',
+                'ganadora'  
+            ]
+
+## Serializador subasta pedido internacional
+class SubastapedidointernacionalSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Subastapedidointernacional
+        fields=['idsubastapedidointernacional',
+                'fechainicio',
+                'fechatermino',
+                'fechaentregadeproductos',
+                'idadministrador',
+                'idpedidointernacional'
+               ]
+
+## Serializador Postulacion transporte nacional
+class PostulaciontransnacionalSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Postulaciontransnacional
+        fields=['idpostulacionnacional',
+                'idtransportista',
+                'idsubastatransportenacional',
+                'tipovehiculo1',
+                'patente1',
+                'cadenadefrio1',
+                'tipovehiculo2',
+                'patente2',
+                'cadenadefrio2',
+                'tipovehiculo3',
+                'patente3',
+                'cadenadefrio3',
+                'tipovehiculo4',
+                'patente4',
+                'cadenadefrio4',
+                'tipovehiculo5',
+                'patente5',
+                'cadenadefrio5',
+                'ganadora'
+               ]
+ 
+## Serializador postulacion transporte internacional
+class PostulaciontransinternacionalSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Postulaciontransinternacional
+        fields=['idpostulacion',
+                'idtransportista',
+                'idsubastatransinternacional',
+                'tipovehiculo1',
+                'patente1',
+                'cadenadefrio1',
+                'tipovehiculo2',
+                'patente2',
+                'cadenadefrio2',
+                'tipovehiculo3',
+                'patente3',
+                'cadenadefrio3',
+                'tipovehiculo4',
+                'patente4',
+                'cadenadefrio4',
+                'tipovehiculo5',
+                'patente5',
+                'cadenadefrio5',
+                'ganadora'
+               ]
+
+## Serializador de informes de venta globales
+class InformeventaglobalSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Informeventaglobal
+        fields=['idinformeventaglobal',
+                'precioventa',
+                'cantidadvendida',
+                'gananciatotal',
+                'idcontratoventaextranjero',
+                'idproductor',
+                'idconcretacionventa'
+               ]
+
+class  InformeventapersonalSerializer(serializers.ModelSerializer):
+    class Meta:
+        model= Informeventapersonal
+        fields=['idinformeventapersonal',
+                'precioventa',
+                'cantidadvendida',
+                'gananciapersonal',
+                'idcontratoventaextranjero',
+                'idproductor',
+                'idconcretacionventa'
                ]
