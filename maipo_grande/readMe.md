@@ -17,10 +17,13 @@ python.exe -m pip install mysqlclient
 python.exe .\manage.py inspectdb
 
 ## Como crear una api
--Instalas djangorestFramework, lo agregas a la aplicaciones utilizadas en el setting
--Creas los Serializadores (serializer.py)
--Creas las view (view.py)
--Creas un router con las url(url.py)
+-Instalas djangorestFramework, lo agregas a la aplicaciones utilizadas en el setting.
+
+-Creas los Serializadores (serializer.py).
+
+-Creas las view (view.py).
+
+-Creas un router con las url(url.py).
 
 ## url de api ya creadas 
 
@@ -56,14 +59,22 @@ http://127.0.0.1:8000/api/vehiculo : Esta url pertenece a la entidad vehiculo, e
 Para poder crear algun registro dentro de esta entidad Primeramente debe existir algun registro en la entidad transportista ya que  todo vehiculo esta asociado a un transportistasin embargo si no existen transportistas registrados no se podra registrar ningun tipo de vehiculo ya que no existira con quien asociar  el vehiculo en si.
 
 .- http://127.0.0.1:8000/api/pedidonacional
+
 .- http://127.0.0.1:8000/api/productos
+
 .- http://127.0.0.1:8000/api/contratoventaextranjero
+
 .- http://127.0.0.1:8000/api/pedidointernacional
+
 .- http://127.0.0.1:8000/api/contratoproductor
+
 ----------------------- Entidades secundarias ------------------------------
 
 .- http://127.0.0.1:8000/api/concretacionventa
+
 .- http://127.0.0.1:8000/api/subastatransportenacional/
 
+
 "subastapedidonacional": "http://127.0.0.1:8000/api/subastapedidonacional/",
+
 "subastatransporteinternacional": "http://127.0.0.1:8000/api/subastatransporteinternacional/"
