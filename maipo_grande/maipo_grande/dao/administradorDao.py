@@ -2,11 +2,9 @@ from maipo_grande.modelo.models import  Administrador
 from django.core.exceptions import ObjectDoesNotExist, EmptyResultSet
 
 def buscarAdminsitrador (id):
-      try:
-         administrador =Administrador.objects.get(idproductor=id)
+         administrador =Administrador.objects.filter(idadministrador=2)
          print(administrador)
-         print(list(administrador.values()))
-         print("resultadoExitoso")
-      except EmptyResultSet as e:
-         print("no se encuentran registros")
+         return{
+            administrador
+         }
 

@@ -74,8 +74,7 @@ class Clientenacional(models.Model):
             'username': self.username,
             'userpass': self.userpass,
         }
-
-
+ 
 # listo serializador pero falta arreglar bd(ver todo)
 class Concretacionventa(models.Model):
     idconcretacionventa = models.AutoField(primary_key=True)
@@ -164,7 +163,7 @@ class Contratoventaextranjero(models.Model):
             'idclienteextranjero':self.idclienteextranjero
      }
 
-
+##listo
 class Informeventaglobal(models.Model):
     idinformeventaglobal = models.AutoField(primary_key=True)
     precioventa = models.IntegerField()

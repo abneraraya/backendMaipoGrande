@@ -16,23 +16,33 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
-from maipo_grande.view import AdministradorViewSet, ClienteExtranjeroViewSet, ClienteNacionalViewSet, ConcretacionventaViewSet, ProductorViewSet, ContratoventaextranjeroViewSet, PedidointernacionalViewSet,ContratoproductorViewSet,PedidonacionalViewSet,ProductosViewSet,TransportistaViewSet,VehiculoViewSet,SubastatransportenacionalViewSet,SubastapedidonacionalViewSet,SubastatransinternacionaleViewSet,PostulacioninternacionalViewSet,PostulacionnacionalViewSet,SubastapedidointernacionalViewSet,PostulaciontransnacionalViewSet,PostulaciontraninternacionalViewSet,InformeventaglobalViewSet,InformeventapersonalViewSet
+from maipo_grande.view import AdministradorViewSet, ClienteExtranjeroViewSet, ClienteNacionalViewSet, ConcretacionventaViewSet, ProductorViewSet, ContratoventaextranjeroViewSet, PedidointernacionalViewSet,ContratoproductorViewSet,PedidonacionalViewSet,ProductosViewSet,TransportistaViewSet,VehiculoViewSet,SubastatransportenacionalViewSet,SubastapedidonacionalViewSet,SubastatransinternacionaleViewSet,PostulacioninternacionalViewSet,PostulacionnacionalViewSet,SubastapedidointernacionalViewSet,PostulaciontransnacionalViewSet,PostulaciontraninternacionalViewSet,InformeventaglobalViewSet,InformeventapersonalViewSet,VehiculoTestViewSet
 from rest_framework import routers, views
 
 
 router=routers.DefaultRouter()
-router.register('productor',ProductorViewSet)
-router.register('administrador',AdministradorViewSet)
-router.register('clienteextranjero',ClienteExtranjeroViewSet)
-router.register('clientenacional',ClienteNacionalViewSet)
+
+## entidades primaria
+
+router.register('usuario/productor',ProductorViewSet)
+router.register('usuario/administrador',AdministradorViewSet)
+router.register('usuario/clienteextranjero',ClienteExtranjeroViewSet)
+router.register('usuario/clientenacional',ClienteNacionalViewSet)
+router.register('usuario/transportista',TransportistaViewSet)
+##------------------------------------------------------
+
+## Pedidos
+router.register('pedido/pedidointernacional',PedidointernacionalViewSet)
+router.register('pedido/pedidonacional',PedidonacionalViewSet)
+
+## Entidades secunadarias
+router.register('productos',ProductosViewSet)
+router.register('pedidonacional',PedidonacionalViewSet)
+router.register('vehiculo',VehiculoViewSet)
+router.register('contratoproductor',ContratoproductorViewSet)
+##------------------------------------------------
 router.register('concretacionventa',ConcretacionventaViewSet)
 router.register('contratoventaextranjero',ContratoventaextranjeroViewSet)
-router.register('pedidointernacional',PedidointernacionalViewSet)
-router.register('contratoproductor',ContratoproductorViewSet)
-router.register('pedidonacional',PedidonacionalViewSet)
-router.register('productos',ProductosViewSet)
-router.register('transportista',TransportistaViewSet)
-router.register('vehiculo',VehiculoViewSet)
 router.register('subastatransportenacional',SubastatransportenacionalViewSet)
 router.register('subastapedidonacional',SubastapedidonacionalViewSet)
 router.register('subastatransporteinternacional',SubastatransinternacionaleViewSet)
@@ -43,6 +53,7 @@ router.register('postulaciontransportenacional',PostulaciontransnacionalViewSet)
 router.register('postulaciontransporteinternacional',PostulaciontraninternacionalViewSet)
 router.register('informedeventaglobal',InformeventaglobalViewSet)
 router.register('informeventapersonal',InformeventapersonalViewSet)
+router.register('test',VehiculoTestViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -79,6 +79,10 @@ class PostulaciontransnacionalViewSet(viewsets.ModelViewSet):
     queryset=models.Postulaciontransnacional.objects.all()
     serializer_class=serializer.PostulaciontransnacionalSerializer
 
+class VehiculoTestViewSet(viewsets.ModelViewSet):
+    queryset=models.Vehiculo.objects.filter(idtransportista=2)
+    serializer_class=serializer.VehiculoSerializer
+
 class PostulaciontraninternacionalViewSet(viewsets.ModelViewSet):
     queryset=models.Postulaciontransinternacional.objects.all()
     serializer_class=serializer.PostulaciontransinternacionalSerializer
